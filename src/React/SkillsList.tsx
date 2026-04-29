@@ -57,34 +57,34 @@ const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const skills = {
-    "Cloud & DevOps": [
-      "Kubernetes & Docker",
-      "AWS, GCP & Azure",
-      "Jenkins & GitLab CI/CD",
-      "Terraform & Ansible",
-    ],
-    "Programming": [
-      "Python",
-      "Java",
-      "JavaScript & TypeScript",
-      "Go & Rust",
-    ],
-    "Frontend": [
+    "Frontend & Framework": [
       "React",
-      "Angular",
-      "Vue.js",
+      "Next.js",
+      "Astro",
       "Node.js",
+      "Express",
     ],
-    "Databases": [
-      "PostgreSQL",
-      "MongoDB",
-      "Redis",
+    "Linguaggi & Programmazione": [
+      "Java",
+      "Python",
+      "JavaScript & TypeScript",
+      "SQL",
     ],
-    "Tools & Monitoring": [
-      "Linux & Bash",
-      "Git",
-      "Prometheus & Grafana",
-      "ELK Stack",
+    "Tools & DevOps": [
+      "Git & GitHub",
+      "Docker",
+      "Firebase",
+      "Vercel",
+    ],
+    "Design": [
+      "Figma",
+      "Tailwind CSS",
+    ],
+    "Concetti": [
+      "REST APIs",
+      "Database Relazionali",
+      "NoSQL",
+      "Agile/Scrum",
     ],
   };
 
