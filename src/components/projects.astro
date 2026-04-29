@@ -1,9 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import svgl from "../../public/svgl.png";
-import stockin from "../../public/stockin.png";
-import moviesfordevs from "../../public/moviesfordevs.png";
-import velez from "../../public/velez.png";
+import awsserverless from "../../public/svgl.png";
+import container from "../../public/svgl.png";
 
 interface Project {
   title: string;
@@ -11,36 +9,25 @@ interface Project {
   link: string;
   preview: string;
   status: string;
+  description: string;
 }
 
 const projects: Project[] = [
   {
-    title: "MoviesForDevs",
-    image: moviesfordevs as ImageMetadata,
-    link: "https://github.com/gothsec/MoviesForDevs",
-    preview: "https://movies-for-devs.vercel.app",
+    title: "AWS Serverless Data Pipeline",
+    image: awsserverless as ImageMetadata,
+    link: "https://github.com/rubenpari/aws-serverless",
+    preview: "https://github.com/rubenpari/aws-serverless",
     status: "Deployed",
+    description: "AWS Lambda, S3, DynamoDB, CloudFormation",
   },
   {
-    title: "StockIn",
-    image: stockin as ImageMetadata,
-    link: "https://github.com/gothsec/stockin-demo",
-    preview: "https://stockin-demo.vercel.app",
-    status: "On Development",
-  },
-  {
-    title: "Svgl.app",
-    image: svgl as ImageMetadata,
-    link: "https://github.com/pheralb/svgl",
-    preview: "https://svgl.app",
-    status: "Contributor",
-  },
-  {
-    title: "Rifas Velez Web",
-    image: velez as ImageMetadata,
-    link: "https://github.com/Buga-Software/rifasvelez-web",
-    preview: "https://www.rifasvelez.com",
+    title: "Container Orchestration",
+    image: container as ImageMetadata,
+    link: "https://github.com/rubenpari/container-orchestration",
+    preview: "https://github.com/rubenpari/container-orchestration",
     status: "Deployed",
+    description: "Kubernetes, Docker Swarm, Helm",
   },
 ];
 ---
@@ -74,6 +61,9 @@ const projects: Project[] = [
                 <div class="flex-grow">
                   <h4 class="text-2xl font-semibold">{project.title}</h4>
                   <span class="py-1 text-sm text-[var(--white-icon)]">
+                    {project.description}
+                  </span>
+                  <span class="py-1 text-sm text-[var(--sec)] block">
                     {project.status}
                   </span>
                 </div>
@@ -117,7 +107,7 @@ const projects: Project[] = [
     </div>
     <a
       target="_blank"
-      href="https://github.com/Gothsec?tab=repositories"
+      href="https://github.com/rubenpari?tab=repositories"
       aria-label="GitHub"
       class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)] hover:scale-105"
     >
