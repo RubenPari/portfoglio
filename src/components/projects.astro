@@ -1,35 +1,7 @@
 ---
-import { Image } from "astro:assets";
-import awsserverless from "../../public/svgl.png";
-import container from "../../public/svgl.png";
+import { getGitHubProjects } from "@lib/github";
 
-interface Project {
-  title: string;
-  image: ImageMetadata;
-  link: string;
-  preview: string;
-  status: string;
-  description: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "AWS Serverless Data Pipeline",
-    image: awsserverless as ImageMetadata,
-    link: "https://github.com/rubenpari/aws-serverless",
-    preview: "https://github.com/rubenpari/aws-serverless",
-    status: "Deployed",
-    description: "AWS Lambda, S3, DynamoDB, CloudFormation",
-  },
-  {
-    title: "Container Orchestration",
-    image: container as ImageMetadata,
-    link: "https://github.com/rubenpari/container-orchestration",
-    preview: "https://github.com/rubenpari/container-orchestration",
-    status: "Deployed",
-    description: "Kubernetes, Docker Swarm, Helm",
-  },
-];
+const projects = await getGitHubProjects();
 ---
 
 <section
@@ -51,10 +23,11 @@ const projects: Project[] = [
               class="block"
             >
               <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
-                <Image
+                <img
                   src={project.image}
                   alt={project.title}
                   class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
                 />
               </div>
               <div class="flex items-center px-3">
